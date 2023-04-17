@@ -1,7 +1,52 @@
+/* general styles */
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+li a{
+    color: #01b1ea;
+}
+
+#login a{
+    color: #01b1ea;
+}
+
+#logo a{
+    color: #01b1ea;
+}
+
+li a:visited{
+    color: #01b1ea;
+}
+
+#login a:visited{
+    color: #01b1ea;
+}
+
+#logo a:visited{
+    color: #01b1ea;
+}
+
+li a:hover{
+    color: #555555;
+}
+
+#login a:hover{
+    color: #555555;
+}
+
+#logo a:hover{
+    color: #555555;
+}
+
+
+
 #logo img{
     width: 100px;
 }
 
 .product img{
-    width: 100px;
+    width: 200px;
 }
