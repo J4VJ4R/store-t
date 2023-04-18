@@ -36,6 +36,7 @@
             <!-- asside-->
             <aside id="aside">
                 <div id="login" class="block_aside">
+                    <h3>Enter to the website</h3>
                     <form action="#" method="post">
                         <label for="email">Email</label>
                         <input type="email" name="email" id="email">
