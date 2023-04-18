@@ -162,8 +162,31 @@ li a:hover{
     border-bottom: 1px solid #01b1ea;
 
 }
+#aside ul{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#aside ul li{
+    list-style: square;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 /* forms */
+label, input[type="text"],
+input[type="password"],
+input[type="email"],
+select{
+    display: block;
+    width: 95%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
 
+label{
+    display: block;
+    margin-top: 10px;
+}
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -181,6 +204,20 @@ input[type="password"]:focus,
 input[type="email"]:focus{
     border: 1px solid #1579b5;
     color: black;
+}
+
+input[type="button"],
+input[type="submit"],
+button{
+    display: block;
+    border-radius: 2px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    background: #2979cd;
+    border: 1px solid #11608e;
+    cursor: pointer;
 }
 
 /* PRODUCTS */

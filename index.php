@@ -44,9 +44,17 @@
                         <input type="password" name="password" id="password">
                         <input type="button" value="Send">
                     </form>
-                    <a href="">Orders</a>
-                    <a href="">Manage orders</a>
-                    <a href="">Manage categories</a>
+                    <ul>
+                        <li>
+                            <a href="">Orders</a>
+                        </li>
+                        <li>
+                            <a href="">Manage orders</a>
+                        </li>
+                        <li>
+                            <a href="">Manage categories</a>
+                        </li>
+                    </ul>
                 </div>
             </aside>
 
