@@ -2,10 +2,10 @@
 
 require_once 'autoload.php';
 
-if(isset($_GET['contoller'])){
-    $nombre_controlador = $_GET['contoller'].'Contoller';
+if(isset($_GET['controller'])){
+    $nombre_controlador = $_GET['controller'].'Controller';
 }else{
-    echo 'The page don\'t exist';
+    echo 'The page doesn\'t exist 1';
     exit;
 }
 
@@ -16,8 +16,8 @@ if (class_exists($nombre_controlador)) {
         $action = $_GET['action'];
         $controlador->$action();
     }else{
-        echo "The website don't exist";
+        echo "The website doesn't exist";
     }
 }else{
-    echo "The website don't exist";
+    echo "The website doesn't exist";
 }
