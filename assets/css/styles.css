@@ -283,3 +283,15 @@ button, .button{
 .product h2{
     margin-bottom: 10px;
 }
+
+/* footer */
+
+#footer{
+    clear: both;
+    text-align: center;
+    padding-top: 10px;
+    padding-top: 10px;
+    color: white;
+    background: #222222;
+    border-top: 4px solid #01b1ea;
+}
