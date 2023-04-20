@@ -2,6 +2,8 @@
 
 class productController{
     public function index(){
-        echo "Controllador for product, Index actions";
+        //give products
+
+        require_once 'views/product/outstanding.php';
     }
 }
