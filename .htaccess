@@ -2,7 +2,7 @@
 # rewrite activated
 
 RewriteEngine on
-ErrorDocument 404 http://192.168.101.5/store-t/error/
+ErrorDocument 404 http://localhost/store-t/error/
 
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
