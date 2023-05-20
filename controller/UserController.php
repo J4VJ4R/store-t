@@ -18,7 +18,7 @@ class userController{
             $user->setEmail($_POST['email']);
             $user->setPassword($_POST['password']);
 
-            var_dump("test3");
+            var_dump("test4");
         }
     }
 }
