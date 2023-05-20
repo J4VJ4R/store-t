@@ -1,6 +1,6 @@
 <h1>Registration</h1>
 
-<form action="?controller=User&action=save" method="post">
+<form action="<?= base_url ?>User/save" method="post">
     <label for="name">Name</label>
     <input type="text" name="name" id="name" required>
 
