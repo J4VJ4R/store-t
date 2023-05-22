@@ -44,7 +44,12 @@ class User{
      */
     public function setName($name): self
     {
-        $this->name = $this->db->real_escape_string($name);
+        $stmt = $this->db->prepare('UPDATE users SET name = :name WHERE id = :id');
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':id', $this->id);
+        $stmt->execute();
+
+        $this->name = $name;
 
         return $this;
     }
@@ -62,7 +67,12 @@ class User{
      */
     public function setLastname($lastname): self
     {
-        $this->lastname = $this->db->real_escape_string($lastname);
+        $stmt = $this->db->prepare('UPDATE users SET lastname = :lastname WHERE id = :id');
+        $stmt->bindParam(':lastname', $lastname);
+        $stmt->bindParam(':id', $this->id);
+        $stmt->execute();
+
+        $this->lastname = $lastname;
 
         return $this;
     }
@@ -80,7 +90,12 @@ class User{
      */
     public function setEmail($email): self
     {
-        $this->email = $this->db->real_escape_string($email);
+        $stmt = $this->db->prepare('UPDATE users SET email = :email WHERE id = :id');
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':id', $this->id);
+        $stmt->execute();
+
+        $this->email = $email;
 
         return $this;
     }
@@ -98,7 +113,12 @@ class User{
      */
     public function setPassword($password): self
     {
-        $this->password = password_hash($this->db->real_escape_string($password), PASSWORD_BCRYPT, ['cost' => 4]);
+        $stmt = $this->db->prepare('UPDATE users SET  password = :password WHERE id = :id');
+        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':id', $this->id);
+        $stmt->execute();
+
+        $this->password = password_hash($password, PASSWORD_BCRYPT, ['cost' => 4]);
 
         return $this;
     }
@@ -138,14 +158,27 @@ class User{
 
         return $this;
     }
+    // code to mysql
+
+    // public function save(){
+    //     $sql = "INSERT INTO users VALUES (NULL, '{$this->getName()}', '{$this->getLastname()}', '{$this->getEmail()}', '{$this->getPassword()}', 'user', null);";
+    //     $save = $this->db->query($sql);
+
+    //     $result = false;
+    //     if($save){
+    //         $result = true;
+    //     }
+    // }
 
     public function save(){
-        $sql = "INSERT INTO users VALUES (NULL, '{$this->getName()}', '{$this->getLastname()}', '{$this->getEmail()}', '{$this->getPassword()}', 'user', null);";
-        $save = $this->db->query($sql);
+        $sql = "INSERT INTO users (name, lastname, email, password, rol) VALUES (:name, :lastname, :email, :password, 'user')";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':name', $this->getName());
+        $stmt->bindParam(':lastname', $this->getLastname());
+        $stmt->bindParam(':email', $this->getEmail());
+        $stmt->bindParam(':password', $this->getPassword());
 
-        $result = false;
-        if($save){
-            $result = true;
-        }
+        $result = $stmt->execute();
+        return $result;
     }
 }

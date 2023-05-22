@@ -17,8 +17,12 @@ class userController{
             $user->setLastname($_POST['lastname']);
             $user->setEmail($_POST['email']);
             $user->setPassword($_POST['password']);
-
-            var_dump("test4");
+            $save = $user->save();
+            if($save){
+                echo "Registration completed";
+            }else{
+                echo "Registration not completed";
+            }
         }
     }
 }
