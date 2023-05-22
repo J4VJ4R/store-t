@@ -19,10 +19,13 @@ class userController{
             $user->setPassword($_POST['password']);
             $save = $user->save();
             if($save){
-                echo "Registration completed";
+                $_SESSION['register'] = "complete";
             }else{
-                echo "Registration not completed";
+                $_SESSION['register'] = "failed";
             }
+        }else{
+            $_SESSION['register'] = "failed";
         }
+        header("Location:".base_url.'User/save');
     }
 }
