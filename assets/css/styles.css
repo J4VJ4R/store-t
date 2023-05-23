@@ -295,3 +295,11 @@ button, .button{
     background: #222222;
     border-top: 4px solid #01b1ea;
 }
+
+.alert_green{
+    color: #16b54b;
+}
+
+.alert_red{
+    color: red;
+}

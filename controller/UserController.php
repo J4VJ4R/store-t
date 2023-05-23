@@ -12,20 +12,30 @@ class userController{
 
     public function save(){
         if (isset($_POST)) {
-            $user = new User();
-            $user->setName($_POST['name']);
-            $user->setLastname($_POST['lastname']);
-            $user->setEmail($_POST['email']);
-            $user->setPassword($_POST['password']);
-            $save = $user->save();
-            if($save){
-                $_SESSION['register'] = "complete";
+
+            $name = isset($_POST['name']) ? $_POST['name'] : false;
+            $lastname = isset($_POST['lastname']) ? $_POST['lastname'] : false;
+            $email = isset($_POST['email']) ? $_POST['email'] : false;
+            $password = isset($_POST['password']) ? $_POST['password'] : false;
+
+            if($name && $lastname && $email && $password){
+                $user = new User();
+                $user->setName($name);
+                $user->setLastname($lastname);
+                $user->setEmail($email);
+                $user->setPassword($password);
+                $save = $user->save();
+                if($save){
+                    $_SESSION['register'] = "complete";
+                }else{
+                    $_SESSION['register'] = "failed";
+                }
             }else{
                 $_SESSION['register'] = "failed";
             }
         }else{
             $_SESSION['register'] = "failed";
         }
-        header("Location:".base_url.'User/save');
+        header("Location:".base_url.'User/registration');
     }
 }
